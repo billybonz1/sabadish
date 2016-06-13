@@ -1,0 +1,22 @@
+=btn-hover-light($color)
+  &:hover
+    background: lighten($color, 25)
+    color: white
+  &:focus
+    background: lighten($color, 15)
+    color: white
+=btn-hover-dark($color)
+  &:hover
+    background: darken($color, 14)
+    color: #000
+  &:focus
+    background: darken($color, 15)
+    color: #000
+=font-medium($size,$color)
+  font-family: PFEncoreSansPro-Medium
+  font-size: $size
+  color: $color
+=font-regular($size,$color)
+  font-family: PFEncoreSansPro-Book
+  font-size: $size
+  color: $color

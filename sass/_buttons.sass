@@ -1,0 +1,27 @@
+.btn
+  display: block
+  border-radius: 10em
+  text-transform: uppercase
+  +font-medium(inherit,inherit)
+  transition: .2s all
+  &:hover,&:focus
+    text-decoration: none
+    color: inherit
+
+.btn_call
+  border: 2px solid #2c3e50
+  color: #2c3e50
+  padding: 8px 20px
+  margin-top: 18px
+  +btn-hover-light(#2c3e50)
+.btn_reg
+  border: 2px solid #fff
+  display: inline-block
+  background: #ffeb3b
+  color: #263238
+  font-size: 18px
+  padding: 24px 37px
+  margin-top: 37px
+  +btn-hover-dark(#ffeb3b)
+  &:hover,&:focus
+    color: #263238
