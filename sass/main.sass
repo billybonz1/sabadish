@@ -32,7 +32,7 @@ body textarea:required:valid
 //Custom Styles Here
 body
 	background: #00a77b
-	+font-regular(14px,inherit)
+	+font-regular(14px,#263238)
 .hidden
 	display: none
 .inner
@@ -42,7 +42,7 @@ body
 	text-align: center
 .header
 	position: relative
-	background: url(../img/header.jpg) center top no-repeat
+	background: url(../img/header-min.jpg) center top no-repeat
 	height: 703px
 .logo
 	margin-top: 21px
@@ -106,8 +106,14 @@ section
 			background: #ffeb3b
 .section_portfels
 	padding-bottom: 85px
+
+.section_countdown
+	padding-bottom: 105px
+.section_full
+	padding-left: 10%
+	padding-right: 10%
 .background1
-	background-image: url(../img/after_course.jpg)
+	background-image: url(../img/after_course-min.jpg)
 	background-position: center top
 	background-size: cover
 .p1
@@ -299,8 +305,12 @@ section
 	&:hover
 		background: #27ae60
 		color: #fff
+	&:focus
+		background: darken(#27ae60, 10)
+		color: #fff
 .background2
-	background: url(../img/action.jpg) center top
+	background: url(../img/action-min.jpg) center top
+	background-size: cover
 .countdown
 	overflow: hidden
 	background: url(../img/countdown.png) -18px 1px
@@ -342,5 +352,41 @@ section
 		position: absolute
 		left: 50%
 		margin-left: -0.5px
+.advantages__icon
+	width: 90px
+	height: 90px
+	border: 3px solid #27ae60
+	border-radius: 100%
+	background-repeat: no-repeat
+	background-position: center
+	transition: .2s all
+	display: inline-block
+	&:hover
+		background-color: #27ae60
+		background-repeat: no-repeat
+.advantages__item
+	text-align: center
+	min-height: 369px
+	padding-top: 53px
+	p
+		+font-medium(17px,inherit)
+		padding-top: 9px
+@for $i from 1 through 6
+	.advantages__icon.adv-icon#{$i}
+		+icon-hover($i)
+
+.advantages__title
+	padding-top: 15px
+	+font-medium(24px,#263238)
+	text-transform: uppercase
+	&:after
+		background: #27ae60
+		display: block
+		width: 67%
+		height: 1px
+		position: relative
+		margin: 0 auto
+		margin-top: 8px
+		content: ""
 //ALWAYS END
 @import "media"
