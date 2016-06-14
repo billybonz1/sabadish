@@ -22,6 +22,8 @@
 		min-height: auto
 	.after-course_middle
 		padding-top: 10px
+	.countdown
+		background: #27ae60
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	section
@@ -40,6 +42,11 @@
 			max-width: none
 	.about-me__text
 		font-size: 1.8rem
+	.countdown-text__item
+		font-size: 16px
+	.countdown-lines__item
+		&:after
+			height: 90px
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -82,6 +89,8 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
+	.countdown-text
+		padding: 0 16px
 	.background1
 		background-image: none
 	.main__title
@@ -104,6 +113,18 @@
 		font-size: 22px
 	.portfels__theses
 		padding-left: 20px
+	.btn_arrow
+		&:after
+			display: none
+	.countdown-lines
+		display: none
+	.countdown-text__item
+		font-size: 12px
+	.countdown-lines__item
+		&:after
+			height: 60px
+	.countdown canvas
+		margin: 32px auto 48px auto
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

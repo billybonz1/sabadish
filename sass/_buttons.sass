@@ -1,5 +1,6 @@
 .btn
   display: block
+  position: relative
   border-radius: 10em
   text-transform: uppercase
   +font-medium(inherit,inherit)
@@ -25,3 +26,13 @@
   +btn-hover-dark(#ffeb3b)
   &:hover,&:focus
     color: #263238
+.btn_arrow
+  &:after
+    width: 58px
+    height: 26px
+    background: url(../img/arr.png)
+    content: ""
+    display: block
+    position: absolute
+    right: -84px
+    top: 15px

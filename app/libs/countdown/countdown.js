@@ -1,6 +1,6 @@
 var ringer = {
     //countdown_to: "10/31/2014",
-    countdown_to: "10/31/2016",
+    countdown_to: "06/17/2016",
     rings: {
         'дней': {
             s: 86400000, // mseconds in a day,
@@ -35,10 +35,10 @@ var ringer = {
             h: ($r.r_size + $r.r_thickness)
         };
 
-        $r.cvs.setAttribute('width', $(".countdown").width());
-        $r.cvs.setAttribute('height', $r.size.h);
+        $r.cvs.setAttribute('width', 908);
+        $r.cvs.setAttribute('height', 123);
         $r.ctx = $r.cvs.getContext('2d');
-        $(".countdown").append($r.cvs);
+        $(".countdown").prepend($r.cvs);
         $r.cvs = $($r.cvs);
         $r.ctx.textAlign = 'center';
         $r.actual_size = $r.r_size + $r.r_thickness;
@@ -100,8 +100,8 @@ var ringer = {
         $r.ctx.fillText(label, 0, 80);
         $r.ctx.fillText(label, 0, 80);
 
-        $r.ctx.font = '40px PFEncoreSansPro-Book';
-        $r.ctx.fillText(Math.floor(value), 0, 10);
+        $r.ctx.font = '58px PFEncoreSansPro-Book';
+        $r.ctx.fillText(Math.floor(value), 0, 16);
 
         $r.ctx.restore();
     }

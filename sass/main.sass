@@ -104,6 +104,8 @@ section
 		color: #fff
 		&:after
 			background: #ffeb3b
+.section_portfels
+	padding-bottom: 85px
 .background1
 	background-image: url(../img/after_course.jpg)
 	background-position: center top
@@ -300,16 +302,45 @@ section
 .background2
 	background: url(../img/action.jpg) center top
 .countdown
+	overflow: hidden
 	background: url(../img/countdown.png) -18px 1px
 	border: 3px solid #fff
 	max-width: 914px
 	margin: 0 auto
 	border-radius: 52px
-	margin-top: 35px
+	margin-top: 38px
+	padding-bottom: 29px
+	position: relative
 	canvas
 		display: block
 		position: relative
 		background: transparent
-		margin: 40px auto
+		margin: 46px auto
+.countdown-text
+	text-align: center
+	margin-top: -38px
+	position: relative
+	padding: 0 12px
+.countdown-text__item
+	font-size: 18px
+	color: #fff
+	text-align: center
+.countdown-lines
+	position: absolute
+	width: 100%
+	top: 46px
+	padding: 0 14%
+.countdown-lines__item
+	position: relative
+	height: 20px
+	&:after
+		width: 1px
+		height: 130px
+		background: #2ecc71
+		content: ""
+		display: block
+		position: absolute
+		left: 50%
+		margin-left: -0.5px
 //ALWAYS END
 @import "media"
