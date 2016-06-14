@@ -35,7 +35,7 @@ var ringer = {
             h: ($r.r_size + $r.r_thickness)
         };
 
-        $r.cvs.setAttribute('width', $r.size.w);
+        $r.cvs.setAttribute('width', $(".countdown").width());
         $r.cvs.setAttribute('height', $r.size.h);
         $r.ctx = $r.cvs.getContext('2d');
         $(".countdown").append($r.cvs);
@@ -44,7 +44,7 @@ var ringer = {
         $r.actual_size = $r.r_size + $r.r_thickness;
         $r.countdown_to_time = new Date($r.countdown_to).getTime();
         $r.cvs.css({
-            width: $r.size.w + "px",
+            width: "100%",
             //height: $r.size.h + "px"
         });
         $r.go();
