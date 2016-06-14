@@ -21,13 +21,33 @@ var ringer = {
     },
     r_count: 5,
     r_spacing: 104, // px
+    r_width: 908,
+    r_height: 123,
+    r_digit_font: '58px PFEncoreSansPro-Book',
+    r_digit_top: 16,
     r_size: 120, // px
     r_thickness: 3, // px
     update_interval: 11, // ms
 
+
+
+
     init: function() {
 
         $r = ringer;
+        if($(window).width() <= 480){
+            $r.r_spacing = 50;
+            $r.r_size = 163;
+            $r.r_digit_font = '85px PFEncoreSansPro-Book';
+            $r.r_digit_top = 23;
+            $r.r_height = 173;
+        }else{
+            $r.r_spacing = 104;
+            $r.r_size = 120;
+            $r.r_digit_font = '58px PFEncoreSansPro-Book';
+            $r.r_digit_top = 16;
+            $r.r_height = 123;
+        }
         $r.cvs = document.createElement('canvas');
 
         $r.size = {
@@ -35,8 +55,8 @@ var ringer = {
             h: ($r.r_size + $r.r_thickness)
         };
 
-        $r.cvs.setAttribute('width', 908);
-        $r.cvs.setAttribute('height', 123);
+        $r.cvs.setAttribute('width', $r.r_width);
+        $r.cvs.setAttribute('height', $r.r_height);
         $r.ctx = $r.cvs.getContext('2d');
         $(".countdown").prepend($r.cvs);
         $r.cvs = $($r.cvs);
@@ -100,11 +120,25 @@ var ringer = {
         $r.ctx.fillText(label, 0, 80);
         $r.ctx.fillText(label, 0, 80);
 
-        $r.ctx.font = '58px PFEncoreSansPro-Book';
-        $r.ctx.fillText(Math.floor(value), 0, 16);
+        $r.ctx.font = $r.r_digit_font;
+        $r.ctx.fillText(Math.floor(value), 0, $r.r_digit_top);
 
         $r.ctx.restore();
+    },
+    clear: function(){
+        $r.cvs.remove();
     }
 }
 
 ringer.init();
+
+function onResize(){
+    ringer.clear();
+    ringer.init();
+}
+
+var timer;
+$(window).bind('resize', function(){
+    timer && clearTimeout(timer);
+    timer = setTimeout(onResize, 100);
+});
