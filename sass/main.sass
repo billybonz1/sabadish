@@ -29,7 +29,6 @@ body textarea:focus:required:invalid
 body input:required:valid,
 body textarea:required:valid
 	color: #666
-
 //Custom Styles Here
 body
 	background: #00a77b
@@ -98,6 +97,17 @@ section
 	h2
 		&:after
 			background: #2ecc71
+.section_green
+	background: #29b765
+	padding: 59px 0 58px
+	h2
+		color: #fff
+		&:after
+			background: #ffeb3b
+.background1
+	background-image: url(../img/after_course.jpg)
+	background-position: center top
+	background-size: cover
 .p1
 	+font-medium(24px,#263238)
 	text-align: center
@@ -177,5 +187,129 @@ section
 		color: #fff
 	span
 		font-size: 18px
+
+.after-course
+	text-align: center
+	+font-medium(51.69px,#ffeb3b)
+	padding-bottom: 44px
+.after-course__inner
+	+font-regular(22px,#fff)
+	border-top: 1px solid #ffffff
+	border-bottom: 1px solid #ffffff
+	min-height: 125px
+	font-weight: 300
+	margin: 0 52px
+	padding: 12px 10px
+	line-height: 25px
+.after-course_middle
+	padding-top: 35px
+
+.portfels
+	text-align: center
+	padding-top: 35px
+.portfels__item
+	width: 400px
+	margin: 0 31px
+	margin-bottom: 20px
+	text-align: left
+	display: inline-block
+	vertical-align: middle
+.portfels__item__header
+	background: #eceff1
+	+font-medium(24px,#27ae60)
+	text-transform: uppercase
+	text-align: center
+	border: 3px solid #fff
+	border-radius: 10em
+	padding: 35px 0
+	position: relative
+	z-index: 2
+.portfels__item__wrap
+	background: #eceff1
+	position: relative
+	z-index: 1
+	margin: 0 2px
+	margin-top: -52px
+	padding-top: 60px
+.portfels__theses
+	border: 3px solid #fff
+	background: #eceff1
+	margin: 0 9px
+	margin-top: -33px
+	padding: 47px 0px 50px 35px
+	&:after
+		height: 1px
+		background: #fff
+		width: 50%
+		left: 50%
+		bottom: 106px
+		margin-left: -25%
+		content: ""
+		display: block
+		position: absolute
+.portfels__theses__item
+	margin-bottom: 32px
+	color: #263238
+	span
+		display: inline-block
+		vertical-align: top
+		+font-medium(20px,#263238)
+		max-width: 93%
+		line-height: 29px
+	&:before
+		width: 8px
+		height: 8px
+		content: ""
+		background: #27ae60
+		display: inline-block
+		border-radius: 100%
+		margin-right: 10px
+		margin-top: 10px
+		vertical-align: top
+.portfels__price
+	+font-medium(36px,#27ae60)
+	text-align: center
+	padding-top: 14px
+	span
+		font-size: 18px
+		color: #263238
+		position: relative
+		margin-left: -29px
+		margin-right: -6px
+		&:after
+			background: #ff0000
+			height: 1px
+			position: absolute
+			content: ""
+			display: block
+			width: 120%
+			left: -5px
+			top: 11px
+.portfels__item__button
+	+font-medium(18px,#263238)
+	text-align: center
+	background: #ffeb3b
+	padding: 24px 0
+	margin-top: -24px
+	position: relative
+	z-index: 2
+	border: 3px solid #fff
+	&:hover
+		background: #27ae60
+		color: #fff
+.background2
+	background: url(../img/action.jpg) center top
+.countdown
+	background: url(../img/countdown.png) -18px 1px
+	border: 3px solid #fff
+	max-width: 914px
+	margin: 0 auto
+	border-radius: 52px
+	margin-top: 35px
+	canvas
+		display: block
+		position: relative
+		background: transparent
+		margin: 40px auto
 //ALWAYS END
 @import "media"
