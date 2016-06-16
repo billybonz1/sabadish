@@ -51,6 +51,7 @@ gulp.task('scripts', function () {
         './app/libs/countdown/countdown.js',
         './app/libs/lightslider/lightslider.min.js',
         './app/libs/magnific/magnific.js',
+        './app/libs/scroll2id/scroll2id.js',
         './app/js/common.js'
         
         // './app/libs/waypoints/waypoints.min.js',

@@ -45,6 +45,10 @@
 </head>
 
 <body>
+	<a href="#success-popup" id="success-popup-button"></a>
+	<div id="success-popup" class="success-popup mfp-hide modal-form">
+		<span>Artem</span>, спасибо Ваши данные отправлены !
+	</div>
 	<div id="form-popup" class="modal-form mfp-hide">
 		<form method="POST" class="form-inline" action="javascript:void(null);">
 			<div class="form-inner">
@@ -80,6 +84,38 @@
 			</div>
 		</form>
 	</div>
+	<div id="form-popup1" class="modal-form mfp-hide">
+		<form method="POST" class="form-inline" action="javascript:void(null);">
+			<div class="form-inner">
+				<!-- Hidden Required Fields -->
+				<input type="hidden" name="project_name" value="sololife.com.ua">
+				<input type="hidden" name="admin_email" value="ya.fechuksa1013@yandex.ru">
+				<input type="hidden" name="form_subject" value="Заказ звонка">
+				<!-- END Hidden Required Fields -->
+				<div class="form_inputs">
+					<div class="form-input">
+						<input type="text" class="form-control" name="name" required="" placeholder="Имя" />
+					</div>
+					<div class="form-input">
+						<input type="tel" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" name="phone" required=""  placeholder="телефон" />
+					</div>
+				</div>
+			</div>
+			<!-- Просто любое дополнительное поле -->
+			<input type="hidden" name="other_data" value="" />
+			<!-- Динамическое дополнительное поле для передачи данных с кнопок по всему сайту -->
+			<input type="hidden" class="pacet" name="form_pacet" value="">
+			<!-- GET RESPONCE INPUTS -->
+			<input type="hidden" name="start_day" value=""/>
+			<!-- Если нужно отправлять и на почту и на GetResponse - указываем campaign_token -->
+			<input type="hidden" name="campaign_token" value=""/>
+			<!-- GET RESPONCE INPUTS -->
+			<div class="clear"></div>
+			<div class="cb tc">
+				<button type="submit" class="btn btn_reg modal_btn" name="send">Получить</button>
+			</div>
+		</form>
+	</div>
 	<div class="loader">
 		<img src="img/logo.svg" alt="">
 	</div>
@@ -91,7 +127,7 @@
 						<div class="logo pull-left">
 							<img src="img/logo.svg" alt="">
 						</div>
-						<a href="#form-popup" class="btn btn_call pull-right popup" data-form-subject="Заказ Звонка">ПЕРЕЗВОНИТЕ МНЕ</a>
+						<a href="#form-popup1" class="btn btn_call pull-right popup" data-form-subject="Заказ Звонка">ПЕРЕЗВОНИТЕ МНЕ</a>
 					</div>
 				</div>
 				<div class="row main__title">
@@ -101,7 +137,7 @@
 						<p>
 							8 недельный онлайн курс где Вы сможете осознанно перейти на ведение здорового образа жизни, не смотря ни на что, прямо на сессиях.
 						</p>
-						<a href="#form-popup" class="btn btn_reg btn_arrow popup" data-form-subject="Регитсрация">
+						<a href="#portfels" class="btn btn_reg btn_arrow scroll2id" data-form-subject="Регитсрация">
 							Зарегистрироваться
 						</a>
 					</div>
@@ -281,7 +317,7 @@
 		</div>
 	</section>
 
-	<section class="section_white section_portfels">
+	<section class="section_white section_portfels" id="portfels">
 		<div class="inner">
 			<div class="container-fluid">
 				<div class="row">
@@ -404,7 +440,7 @@
 					<div class="col-xs-12">
 						<h2>С Нами у Вас Есть Преимущества</h2>
 					</div>
-					<div class="advantages">
+					<div class="advantages col-xs-12">
 						<div class="row">
 							<div class="advantages__item col-md-4 col-sm-6">
 								<div class="advantages__icon adv-icon5"></div>
@@ -497,7 +533,7 @@
 					<div class="col-xs-12">
 						<h2>Как Мы работаем</h2>
 					</div>
-					<div class="advantages advantages_work">
+					<div class="advantages advantages_work col-xs-12">
 						<div class="row">
 							<div class="advantages__item col-md-4 col-sm-6">
 								<div class="advantages__icon">

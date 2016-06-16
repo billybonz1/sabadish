@@ -91,7 +91,7 @@ $(function() {
 		var msg = btn.closest('form').find('input, textarea');
 		var send_btn = btn.closest('form').find('[name=send]');
 		var send_options = btn.closest('form').find('[name=campaign_token]');
-
+		var user_name = btn.closest('form').find('[name=name]');
 		$(ref).each(function() {
 			if ($(this).val() == '') {
 				var errorfield = $(this);
@@ -134,9 +134,8 @@ $(function() {
 							$('form').trigger("reset");
 							setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
 							// Настройки модального окна после удачной отправки
-							$(".fancybox-close").click();
-							$('div.md-show').removeClass('md-show');
-							$("#call_ok")[0].click();
+							$("#success-popup span").html(user_name);
+							$("#success-popup-button").click();
 						},
 						error: function(xhr, str) {
 							alert('Возникла ошибка: ' + xhr.responseCode);
@@ -155,10 +154,11 @@ $(function() {
 								statusCode: {0:function() {
 									$('form').trigger("reset");
 									setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
-									$(".fancybox-close").click();
+
 									// Настройки модального окна после удачной отправки
-									$('div.md-show').removeClass('md-show');
-									$("#call_ok")[0].click();
+									$("#success-popup span").html(user_name);
+									$("#success-popup-button").click();
+
 								}}
 							}),
 						error:  function(xhr, str) {
@@ -176,17 +176,17 @@ $(function() {
 		mainClass: 'my-modal'
 		// other options
 	});
-
-	$('.popup').magnificPopup({
+	$('.popup,#success-popup-button').magnificPopup({
 		type: 'inline',
 		closeBtnInside:true,
 		mainClass: 'my-form-modal'
 		// other options
 	});
 	var form_subject;
-	$('.popup').on("click",function () {
+	$('.portfels__item__button').on("click",function () {
 		form_subject = $(this).data('form-subject');
 		$("#form-popup [name=form_subject]").val(form_subject);
 	});
+	$(".scroll2id").mPageScroll2id();
 });
 

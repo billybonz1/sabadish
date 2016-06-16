@@ -36,6 +36,7 @@ ul
 	list-style: none
 body
 	background: #00a77b
+	min-width: 320px
 	+font-regular(14px,#263238)
 .hidden
 	display: none
@@ -126,8 +127,8 @@ section
 	padding-bottom: 39px
 .section_testimonials
 	padding-bottom: 95px
-	background-image: url(../img/video.jpg)
-	background-size: cover
+	background-image: url(../img/video-min.jpg)
+	background-repeat: repeat-x
 .section_work
 	padding-bottom: 58px
 .section_bottom_form
@@ -437,15 +438,15 @@ section
 		content: ""
 		background: #27ae60
 		height: 1px
-		width: 76%
+		width: 74%
 		position: absolute
 		display: block
 		left: 50%
-		margin-left: -38%
+		margin-left: -37%
 	&:after
-		top: 466px
+		top: 354px
 	&:before
-		top: 199px
+		top: 86px
 .video-slider
 	max-width: 820px
 	margin: 0 auto
@@ -617,5 +618,11 @@ footer
 	.mfp-close
 		color: #fff
 		font-size: 43px
+	.mfp-content
+		position: static
+.success-popup
+	color: #fff
+	font-size: 25px
+
 //ALWAYS END
 @import "media"
