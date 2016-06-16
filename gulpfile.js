@@ -5,8 +5,11 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
+    imagemin = require('gulp-imagemin'),
     otf2ttf = require('otf2ttf'),
     uglify = require('gulp-uglify'),
+    cache = require('gulp-cache'),
+    pngquant    = require('imagemin-pngquant'),
     inject = require('gulp-inject');
 
 gulp.task('browser-sync', ['styles', 'scripts'], function () {
@@ -16,6 +19,17 @@ gulp.task('browser-sync', ['styles', 'scripts'], function () {
         },
         notify: false
     });
+});
+
+gulp.task('img', function() {
+    return gulp.src('app/img/**/*')
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('app/img'));
 });
 
 gulp.task('styles', function () {
@@ -37,7 +51,7 @@ gulp.task('scripts', function () {
         './app/libs/countdown/countdown.js',
         './app/libs/lightslider/lightslider.min.js',
         './app/libs/magnific/magnific.js',
-        // './app/js/common.js',
+        './app/js/common.js'
         
         // './app/libs/waypoints/waypoints.min.js',
         // './app/libs/animate/animate-css.js',
