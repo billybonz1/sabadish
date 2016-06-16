@@ -91,7 +91,7 @@ $(function() {
 		var msg = btn.closest('form').find('input, textarea');
 		var send_btn = btn.closest('form').find('[name=send]');
 		var send_options = btn.closest('form').find('[name=campaign_token]');
-		var user_name = btn.closest('form').find('[name=name]');
+		var user_name = btn.closest('form').find('[name=name]').val();
 		$(ref).each(function() {
 			if ($(this).val() == '') {
 				var errorfield = $(this);
