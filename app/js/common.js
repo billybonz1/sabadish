@@ -176,5 +176,17 @@ $(function() {
 		mainClass: 'my-modal'
 		// other options
 	});
+
+	$('.popup').magnificPopup({
+		type: 'inline',
+		closeBtnInside:true,
+		mainClass: 'my-form-modal'
+		// other options
+	});
+	var form_subject;
+	$('.popup').on("click",function () {
+		form_subject = $(this).data('form-subject');
+		$("#form-popup [name=form_subject]").val(form_subject);
+	});
 });
 

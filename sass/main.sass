@@ -70,10 +70,13 @@ body
 		line-height: 37px
 	h2
 		+font-regular(60px,inherit)
+		font-family: intro
+		line-height: 75px
 		text-transform: uppercase
 		margin-top: 27px
 		letter-spacing: 2px
 		margin-bottom: 29px
+		max-width: 600px
 	p
 		font-size: 24px
 		letter-spacing: 0.5px
@@ -124,6 +127,7 @@ section
 .section_testimonials
 	padding-bottom: 95px
 	background-image: url(../img/video.jpg)
+	background-size: cover
 .section_work
 	padding-bottom: 58px
 .section_bottom_form
@@ -495,12 +499,15 @@ section
 			text-transform: lowercase
 			text-align: center
 			background: #fff
+			&.error
+				outline: 1px solid red
 		*
 			transition: .2s all
 			&:focus
 				outline: 1px solid #2ecc71
 				position: relative
 				z-index: 1
+
 	textarea
 		width: 100%
 		font-size: 20.41px
@@ -580,7 +587,35 @@ footer
 .my-modal
 	iframe
 		background: #fff
-
-
+.modal-form
+	max-width: 400px
+	margin: 0 auto
+	background: #2ecc71
+	text-align: center
+	padding-top: 52px
+	padding-bottom: 46px
+	input
+		width: 250px
+		height: 61px
+		background: none
+		display: inline-block
+		border: 1px solid #fff
+		border-radius: 10em
+		margin-bottom: 11px
+		color: #fff
+		padding-left: 25px
+		outline: 0
+		transition: .2s all
+		&:focus
+			box-shadow: 0 0 5px 0 #fff
+		&.error
+			box-shadow: 0 0 5px 1px red
+		@include placeholder
+			color: #fff
+			text-transform: capitalize
+.my-form-modal
+	.mfp-close
+		color: #fff
+		font-size: 43px
 //ALWAYS END
 @import "media"

@@ -47,6 +47,41 @@
 </head>
 
 <body>
+	<div id="form-popup" class="modal-form mfp-hide">
+		<form method="POST" class="form-inline" action="javascript:void(null);">
+			<div class="form-inner">
+				<!-- Hidden Required Fields -->
+				<input type="hidden" name="project_name" value="sololife.com.ua">
+				<input type="hidden" name="admin_email" value="ya.fechuksa1013@yandex.ru">
+				<input type="hidden" name="form_subject" value="ОСТАЛИСЬ ВОПРОСЫ ПО ОБУЧЕНИЮ">
+				<!-- END Hidden Required Fields -->
+				<div class="form_inputs">
+					<div class="form-input">
+						<input type="text" class="form-control" name="name" required="" placeholder="Имя" />
+					</div>
+					<div class="form-input">
+						<input type="email" class="form-control" name="email" required=""  placeholder="e-mail" />
+					</div>
+					<div class="form-input">
+						<input type="tel" class="form-control" name="phone" required=""  placeholder="телефон" />
+					</div>
+				</div>
+			</div>
+			<!-- Просто любое дополнительное поле -->
+			<input type="hidden" name="other_data" value="" />
+			<!-- Динамическое дополнительное поле для передачи данных с кнопок по всему сайту -->
+			<input type="hidden" class="pacet" name="form_pacet" value="">
+			<!-- GET RESPONCE INPUTS -->
+			<input type="hidden" name="start_day" value=""/>
+			<!-- Если нужно отправлять и на почту и на GetResponse - указываем campaign_token -->
+			<input type="hidden" name="campaign_token" value=""/>
+			<!-- GET RESPONCE INPUTS -->
+			<div class="clear"></div>
+			<div class="cb tc">
+				<button type="submit" class="btn btn_reg modal_btn" name="send">Получить</button>
+			</div>
+		</form>
+	</div>
 	<div class="loader">
 		<img src="img/logo.svg" alt="">
 	</div>
@@ -58,7 +93,7 @@
 						<div class="logo pull-left">
 							<img src="img/logo.svg" alt="">
 						</div>
-						<a href="" class="btn btn_call pull-right">ПЕРЕЗВОНИТЕ МНЕ</a>
+						<a href="#form-popup" class="btn btn_call pull-right popup" data-form-subject="Заказ Звонка">ПЕРЕЗВОНИТЕ МНЕ</a>
 					</div>
 				</div>
 				<div class="row main__title">
@@ -68,7 +103,7 @@
 						<p>
 							8 недельный онлайн курс где Вы сможете осознанно перейти на ведение здорового образа жизни, не смотря ни на что, прямо на сессиях.
 						</p>
-						<a href="" class="btn btn_reg btn_arrow">
+						<a href="#form-popup" class="btn btn_reg btn_arrow popup" data-form-subject="Регитсрация">
 							Зарегистрироваться
 						</a>
 					</div>
@@ -283,7 +318,7 @@
 
 									</div>
 								</div>
-								<a href="" class="portfels__item__button btn">ВЫБРАТЬ</a>
+								<a href="#form-popup" class="portfels__item__button btn popup" data-form-subject="ГРУПОВЫЕ ЗАНЯТИЯ">ВЫБРАТЬ</a>
 							</div>
 							<div class="portfels__item">
 								<div class="portfels__item__header">Личная Работа</div>
@@ -325,7 +360,7 @@
 
 									</div>
 								</div>
-								<a href="" class="portfels__item__button btn">ВЫБРАТЬ</a>
+								<a href="#form-popup" class="portfels__item__button btn popup" data-form-subject="ЛИЧНАЯ РАБОТА">ВЫБРАТЬ</a>
 							</div>
 						</div>
 					</div>
@@ -534,9 +569,9 @@
 						<form method="POST" class="form-inline" action="javascript:void(null);">
 							<div class="form-inner">
 								<!-- Hidden Required Fields -->
-								<input type="hidden" name="project_name" value="hfq-biznes.com">
-								<input type="hidden" name="admin_email" value="naskromnuk@gmail.com">
-								<input type="hidden" name="form_subject" value="РЕГИСТРАЦИЯ">
+								<input type="hidden" name="project_name" value="sololife.com.ua">
+								<input type="hidden" name="admin_email" value="ya.fechuksa1013@yandex.ru">
+								<input type="hidden" name="form_subject" value="ОСТАЛИСЬ ВОПРОСЫ ПО ОБУЧЕНИЮ">
 								<!-- END Hidden Required Fields -->
 								<div class="form_inputs">
 									<div class="form-input">
@@ -561,7 +596,7 @@
 							<!-- Динамическое дополнительное поле для передачи данных с кнопок по всему сайту -->
 							<input type="hidden" class="pacet" name="form_pacet" value="">
 							<!-- GET RESPONCE INPUTS -->
-							<input type="hidden" name="start_day" value="0"/>
+							<input type="hidden" name="start_day" value=""/>
 							<!-- Если нужно отправлять и на почту и на GetResponse - указываем campaign_token -->
 							<input type="hidden" name="campaign_token" value=""/>
 							<!-- GET RESPONCE INPUTS -->
@@ -593,7 +628,7 @@
 						</div>
 					</div>
 					<div class="col-md-4 text-center">
-						<a href="" class="btn btn_call btn_call_footer">ПЕРЕЗВОНИТЕ МНЕ</a>
+						<a href="#form-popup" class="btn btn_call btn_call_footer popup" data-form-subject="Заказ Звонка">ПЕРЕЗВОНИТЕ МНЕ</a>
 					</div>
 					<div class="col-md-4 text-right">
 						<div class="social">
