@@ -15,6 +15,16 @@
   padding: 8px 20px
   margin-top: 18px
   +btn-hover-light(#2c3e50)
+.btn_call_footer
+  display: inline-block
+  color: #fff
+  border: 2px solid #fff
+  margin-top: 0
+  +btn-hover-light(#fff)
+  margin-top: 4px
+  margin-left: -18px
+  &:hover
+    color: #000
 .btn_reg
   border: 2px solid #fff
   display: inline-block
@@ -26,6 +36,7 @@
   +btn-hover-dark(#ffeb3b)
   &:hover,&:focus
     color: #263238
+    outline: 0
 .btn_arrow
   &:after
     width: 58px
@@ -36,3 +47,10 @@
     position: absolute
     right: -84px
     top: 15px
+.btn_submit
+  position: relative
+  top: -44px
+  margin-top: 0
+  padding-left: 56px
+  padding-right: 56px
+  z-index: 2

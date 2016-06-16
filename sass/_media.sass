@@ -5,7 +5,9 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
-
+@media only screen and (max-width : 1101px)
+	.advantages__item
+		min-height: 447px
 @media only screen and (max-width : 1008px)
 	.aboute-me__photo
 		margin-left: 0
@@ -14,6 +16,18 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
+	.advantages__item
+		min-height: 362px
+	footer
+		text-align: center
+		.col-md-4
+			padding-top: 20px
+		.text-right
+			text-align: center !important
+	.footer__after
+		text-align: center
+		.text-right
+			text-align: center !important
 	.aboute-me__photo
 		margin: 0 auto
 	.background1
@@ -24,6 +38,9 @@
 		padding-top: 10px
 	.countdown
 		background: #27ae60
+	.advantages_work
+		&:after,&:before
+			display: none
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	section
@@ -47,6 +64,7 @@
 	.countdown-lines__item
 		&:after
 			height: 90px
+
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -69,6 +87,11 @@
 		animation: none !important
 
 @media only screen and (max-width : 653px)
+	.footer__after
+		a
+			display: block
+	.genius-logo
+		padding-top: 20px
 	.main__title
 		h1
 			font-size: 22px
@@ -76,6 +99,11 @@
 			font-size: 40px
 		p
 			font-size: 20px
+	.section_bottom_form
+		.form-input
+			display: block
+			margin-top: -1px
+
 
 @media only screen and (max-width : 536px)
 	.main__title
@@ -88,7 +116,11 @@
 			font-size: 20px
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+
 	/**/
+	.logo
+		width: 35%
+
 	.countdown-text
 		padding: 0 22px
 	.background1

@@ -35,7 +35,10 @@ gulp.task('scripts', function () {
         './app/libs/modernizr/modernizr.js',
         './app/libs/jquery/jquery-1.11.2.min.js',
         './app/libs/countdown/countdown.js',
-        './app/js/common.js',
+        './app/libs/lightslider/lightslider.min.js',
+        './app/libs/magnific/magnific.js',
+        // './app/js/common.js',
+        
         // './app/libs/waypoints/waypoints.min.js',
         // './app/libs/animate/animate-css.js',
     ])
