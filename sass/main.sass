@@ -268,20 +268,19 @@ section
 			left: -5px
 			top: 11px
 .portfels__item__button
-	+font-medium(18px,#263238)
-	text-align: center
-	background: #ffeb3b
-	padding: 24px 0
-	margin-top: -24px
-	position: relative
-	z-index: 2
-	border: 3px solid #fff
+	&,&:focus
+		+font-medium(18px,#263238)
+		text-align: center
+		background: #ffeb3b
+		padding: 24px 0
+		margin-top: -24px
+		position: relative
+		z-index: 2
+		border: 3px solid #fff
 	&:hover
 		background: #27ae60
 		color: #fff
-	&:focus
-		background: darken(#27ae60, 10)
-		color: #fff
+
 .background2
 	background: url(../img/action-min.jpg) center top
 	background-size: cover
@@ -350,7 +349,7 @@ section
 		background-repeat: no-repeat
 .advantages__item
 	text-align: center
-	min-height: 369px
+	min-height: 373px
 	padding-top: 53px
 	.advantages_work &
 		min-height: 267px
@@ -491,18 +490,16 @@ footer
 
 .icon
 	display: inline-block
-	width: 21px
-	height: 21px
-.icon-mail
 	width: 22px
-	height: 16px
-	background: url(../img/mail.png)
-
+	height: 22px
+	background-repeat: no-repeat
+	margin-right: 1px
+	background-position: center
+	vertical-align: middle
+.icon-mail
+	background-image: url(../img/mail.png)
 .icon-skype
-	width: 21px
-	height: 21px
-	background: url(../img/skype.png)
-	margin-right: 11px !important
+	background-image: url(../img/skype.png)
 .social
 	margin-left: -1px
 	margin-top: 7px
@@ -537,12 +534,18 @@ footer
 	iframe
 		background: #fff
 .modal-form
+	position: relative
+	h2
+		margin: 0 0 20px 0
+		color: #fff
+		font-size: 24px
+		text-transform: uppercase
 	max-width: 400px
 	margin: 0 auto
 	background: #2ecc71
 	text-align: center
 	padding-top: 52px
-	padding-bottom: 46px
+	padding-bottom: 52px
 	input
 		width: 250px
 		height: 61px

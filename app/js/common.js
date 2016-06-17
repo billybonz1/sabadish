@@ -182,10 +182,12 @@ $(function() {
 		mainClass: 'my-form-modal'
 		// other options
 	});
+
 	var form_subject;
 	$('.portfels__item__button').on("click",function () {
 		form_subject = $(this).data('form-subject');
 		$("#form-popup [name=form_subject]").val(form_subject);
+		$("#form-popup h2").html(form_subject);
 	});
 	$(".scroll2id").mPageScroll2id();
 });
