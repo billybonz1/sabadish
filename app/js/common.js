@@ -10,6 +10,7 @@ function youtube(obj){
 
 		$(document).delegate('#'+this.id, 'click', function() {
 			// создаем iframe со включенной опцией autoplay
+			if(!$(this).parents('.video-slider').hasClass('noclick')){
 				videoSlider = $(this).hasClass('my-video') ? 0 : 1;
 				videoId = videoSlider ? 'video' + this.id : undefined;
 				var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&playerapiid=ytplayer&enablejsapi=1";
@@ -27,6 +28,7 @@ function youtube(obj){
 				videoObj = $(this);
 				// Заменяем миниатюру HTML5 плеером с YouTube
 				$(this).replaceWith(iframe);
+			}
 		});
 	});
 }
@@ -73,8 +75,12 @@ $(function() {
 		onSliderLoad: function(el){
 			youtube('#testimonials .youtube');
 		},
+		onBeforeSlide: function (el) {
+			$(".video-slider").addClass('noclick');
+		},
 		onAfterSlide: function(el){
 			console.log(videoId);
+			$(".video-slider").removeClass('noclick');
 			if(videoId != undefined){
 				$('#' + videoId).replaceWith(videoObj);
 			}
@@ -130,7 +136,7 @@ $(function() {
 				if ($(this).val() == '') {
 					$.ajax({
 						type: 'POST',
-						url: 'mail.php',
+						url: '/mail.php',
 						data: msg,
 						success: function() {
 							$('form').trigger("reset");
@@ -146,7 +152,7 @@ $(function() {
 				} else {
 					$.ajax({
 						type: 'POST',
-						url: 'mail.php',
+						url: '/mail.php',
 						data: msg,
 						success:
 							$.ajax({

@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     cache = require('gulp-cache'),
     pngquant    = require('imagemin-pngquant'),
+    uncss    = require('gulp-uncss'),
     inject = require('gulp-inject');
 
 gulp.task('browser-sync', ['styles', 'scripts'], function () {
@@ -20,7 +21,14 @@ gulp.task('browser-sync', ['styles', 'scripts'], function () {
         notify: false
     });
 });
-
+gulp.task('uncss', function () {
+    return gulp.src('app/css/main.min.css')
+        .pipe(uncss({
+            html: ['app/magnit/index.html']
+        }))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('app/css/out'));
+});
 gulp.task('img', function() {
     return gulp.src('app/img/**/*')
         .pipe(cache(imagemin({
