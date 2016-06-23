@@ -66,7 +66,9 @@ $(function() {
 		slideMargin:0,
 		loop:true,
 		pager: false,
-		enableDrag: false,
+		enableDrag: true,
+		enableTouch: true,
+		freeMove: false,
 		addClass: 'video-slider',
 		onSliderLoad: function(el){
 			youtube('#testimonials .youtube');
@@ -190,5 +192,10 @@ $(function() {
 		$("#form-popup h2").html(form_subject);
 	});
 	$(".scroll2id").mPageScroll2id();
+	
+
+	$(document).on('keypress',function(e){
+		console.log(e.charCode);
+	});
 });
 

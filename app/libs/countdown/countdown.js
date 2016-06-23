@@ -1,6 +1,6 @@
 var ringer = {
     //countdown_to: "10/31/2014",
-    countdown_to: "06/17/2016",
+    countdown_to: $("#countdown_date").data('date'),
     rings: {
         'дней': {
             s: 86400000, // mseconds in a day,
@@ -128,7 +128,19 @@ var ringer = {
     clear: function(){
         $r.cvs.remove();
     }
-}
+};
+
+
+
+// var now = 1459728000000;
+// var def = Date.now();
+// var remaing;
+// while ((now - def) < 0) {
+//     now = now + (172800000);
+//     remaing = now - def;
+// }
+// remaing /= 1000;
+// ringer.countdown_to = remaing;
 
 ringer.init();
 
@@ -142,3 +154,4 @@ $(window).bind('resize', function(){
     timer && clearTimeout(timer);
     timer = setTimeout(onResize, 100);
 });
+

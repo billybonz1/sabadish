@@ -51,14 +51,13 @@ gulp.task('scripts', function () {
         './app/libs/countdown/countdown.js',
         './app/libs/lightslider/lightslider.min.js',
         './app/libs/magnific/magnific.js',
-        './app/libs/scroll2id/scroll2id.js',
-        './app/js/common.js'
+        './app/libs/scroll2id/scroll2id.js'
         
         // './app/libs/waypoints/waypoints.min.js',
         // './app/libs/animate/animate-css.js',
     ])
         .pipe(concat('libs.js'))
-        .pipe(uglify()) //Minify libs.js
+        // .pipe(uglify()) //Minify libs.js
         .pipe(gulp.dest('./app/js/'));
 });
 
@@ -77,7 +76,7 @@ gulp.task('watch', function () {
     gulp.watch('app/libs/**/*.js', ['scripts']);
     gulp.watch('app/js/common.js', ['scripts']);
     gulp.watch('app/js/*.js').on("change", browserSync.reload);
-    gulp.watch('app/*.html').on('change', browserSync.reload);
+    gulp.watch('app/**/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['browser-sync', 'watch']);
