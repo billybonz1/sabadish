@@ -23,10 +23,12 @@ var ringer = {
     r_spacing: 104, // px
     r_width: 908,
     r_height: 123,
-    r_digit_font: '58px PFEncoreSansPro-Book',
+    r_digit_size: $("#countdown_date").data('digit-size'),
+    r_digit_font: this.r_digit_size + 'px PFEncoreSansPro-Book',
     r_digit_top: 16,
+    r_circle: false,
     r_size: 120, // px
-    r_thickness: 3, // px
+    r_thickness: $("#countdown_date").data('thickness'), // px
     update_interval: 11, // ms
 
 
@@ -38,13 +40,14 @@ var ringer = {
         if($(window).width() <= 480){
             $r.r_spacing = 50;
             $r.r_size = 163;
-            $r.r_digit_font = '85px PFEncoreSansPro-Book';
+            $r.r_digit_size += 27;
+            $r.r_digit_font = $r.r_digit_size + 'px PFEncoreSansPro-Book';
             $r.r_digit_top = 23;
             $r.r_height = 173;
         }else{
             $r.r_spacing = 104;
             $r.r_size = 120;
-            $r.r_digit_font = '58px PFEncoreSansPro-Book';
+            $r.r_digit_font = $r.r_digit_size + 'px PFEncoreSansPro-Book';
             $r.r_digit_top = 16;
             $r.r_height = 123;
         }
@@ -100,18 +103,20 @@ var ringer = {
         $r.ctx.clearRect($r.actual_size * -0.5, $r.actual_size * -0.5, $r.actual_size, $r.actual_size);
 
         // first circle
-        $r.ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        $r.ctx.beginPath();
-        $r.ctx.arc(0, 0, $r.r_size / 2, 0, 2 * Math.PI, 2);
-        $r.ctx.lineWidth = $r.r_thickness;
-        $r.ctx.stroke();
+        if($r.r_circle){
+            $r.ctx.strokeStyle = "rgba(255,255,255,0.2)";
+            $r.ctx.beginPath();
+            $r.ctx.arc(0, 0, $r.r_size / 2, 0, 2 * Math.PI, 2);
+            $r.ctx.lineWidth = $r.r_thickness;
+            $r.ctx.stroke();
 
-        // second circle
-        $r.ctx.strokeStyle = "#fff";
-        $r.ctx.beginPath();
-        $r.ctx.arc(0, 0, $r.r_size / 2, 0, endAngle, 1);
-        $r.ctx.lineWidth = $r.r_thickness;
-        $r.ctx.stroke();
+            // second circle
+            $r.ctx.strokeStyle = "#fff";
+            $r.ctx.beginPath();
+            $r.ctx.arc(0, 0, $r.r_size / 2, 0, endAngle, 1);
+            $r.ctx.lineWidth = $r.r_thickness;
+            $r.ctx.stroke();
+        }
 
         // label
         $r.ctx.fillStyle = "#ffffff";
